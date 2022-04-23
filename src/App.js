@@ -21,8 +21,8 @@ const App = () => {
   return (
     <div className="App"   >
       <Navigation />
-      {displayNews.map((element) => 
-       <Newsfeed news={element} key={element.objectID} /> 
+      {displayNews.map((element, index) => 
+       <Newsfeed news={element} key={element.objectID} index={index} /> 
       )}
       <Footer />
     </div>
