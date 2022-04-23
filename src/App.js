@@ -1,19 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './index.css';
 import news from "./news.json";
+import Footer from "./components/Footer.js"
+import Navigation from "./components/Navigation"
+// import Newsfeed from './components/Newsfeed';
 
 const App = () => {
-  const displayNews = news.hits;
-  console.log(displayNews);
+
+  const [news, setNews] = useState()
+
+
+
+  // const displayNews = news.hits;
+  // console.log(displayNews);
+
+
+
+
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
-        <p>
-          Vader News.
-        </p>
-      </header>
+      <Navigation />
+      {/* <Newsfeed news={displayNews} /> */}
+      <Footer />
     </div>
   );
 };
