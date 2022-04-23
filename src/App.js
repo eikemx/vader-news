@@ -3,25 +3,27 @@ import './index.css';
 import news from "./news.json";
 import Footer from "./components/Footer.js"
 import Navigation from "./components/Navigation"
-// import Newsfeed from './components/Newsfeed';
+import Newsfeed from './components/Newsfeed';
 
 const App = () => {
 
-  const [news, setNews] = useState()
+  // const [news, setNews] = useState()
 
 
 
-  // const displayNews = news.hits;
-  // console.log(displayNews);
+  const displayNews = news.hits;
+  console.log(displayNews);
 
 
 
 
 
   return (
-    <div className="App">
+    <div className="App"   >
       <Navigation />
-      {/* <Newsfeed news={displayNews} /> */}
+      {displayNews.map((element) => 
+       <Newsfeed news={element} key={element.objectID} /> 
+      )}
       <Footer />
     </div>
   );
