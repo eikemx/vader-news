@@ -1,16 +1,18 @@
-export default function Newsfeed(){
-    
-}
-// const Newsfeed = (props) => {
-// {// Title
-// //   console.log(props.news);}
-//   return (<div className="newsFeed">
-//     <h3>{props.news.title[1]}</h3>
-//     // Top level domain
-//     <p></p>
-//     //Subheading
-//     <p></p>
-//   </div>)
-// };
+import React from "react";
 
-// export default Newsfeed;
+export default function Newsfeed(props) {
+  return (
+    <div>
+      <ol>
+      <li>
+        <p>{props.news.title}</p>
+        <p>{props.news.url}</p>
+        <p>{props.news.points}</p>
+        <p>by {props.news.author}</p>
+        <p>{props.news.created_at} | hide |</p>
+        <p>{props.news.num_comments}</p>
+        </li>
+      </ol>
+    </div>
+  );
+}
