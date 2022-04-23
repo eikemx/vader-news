@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import './index.css';
+import news from "./news.json";
+import Footer from "./components/Footer.js"
+import Navigation from "./components/Navigation"
+// import Newsfeed from './components/Newsfeed';
 
-function App() {
+const App = () => {
+
+  const [news, setNews] = useState()
+
+
+
+  // const displayNews = news.hits;
+  // console.log(displayNews);
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      {/* <Newsfeed news={displayNews} /> */}
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
