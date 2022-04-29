@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { formatDistance, subDays, parseISO, differenceInHours, differenceInDays, differenceInWeeks, differenceInMonths } from 'date-fns';
 import './index.css';
 import news from "./news.json";
 import Footer from "./components/Footer.js"
@@ -22,7 +23,7 @@ const App = () => {
     <div className="App"   >
       <Navigation />
       {displayNews.map((element, index) => 
-       <Newsfeed news={element} key={element.objectID} index={index} /> 
+       <Newsfeed news={element} key={element.objectID} index={index} newsDate={element.created_at} /> 
       )}
       <Footer />
     </div>
