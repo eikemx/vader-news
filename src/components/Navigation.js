@@ -1,6 +1,6 @@
 import Searchbar from "./Searchbar";
 
-export default function Navigation () {
+const Navigation = () => {
     return (
         <div className="navigation">
             <div className="nav-header">
@@ -21,4 +21,6 @@ export default function Navigation () {
             </div>
         </div>
     )
-}
+};
+
+export default Navigation;

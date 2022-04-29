@@ -19,12 +19,14 @@ const App = () => {
 
 
   return (
-    <div className="App"   >
+    <div className="App news-wrapper"   >
       <Navigation />
-      {displayNews.map((element, index) => 
-       <Newsfeed news={element} key={element.objectID} index={index} /> 
-      )}
-      <Footer />
+      <div className='newsfeed-wrapper'>
+        {displayNews.map((element, index) => 
+        <Newsfeed news={element} key={element.objectID} index={index} /> 
+        )}
+        <Footer />
+      </div>
     </div>
   );
 };
