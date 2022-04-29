@@ -1,35 +1,34 @@
+:root{
+  --subtext-colour: #7b7b7b;
+}
+
 body {
-  background-color: ffffff;
   font-family: Verdana, Geneva, sans-serif;
   color: #000000;
-  margin: 1rem 4rem 1rem 4rem;
+  /* margin: 1rem 4rem 1rem 4rem; */
 }
 
 /* Start Navigation */
 .navigation {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  background-color: #EE6F2D;
+  background-color: #ff0000;
   font-size: 10pt;
   line-height: 5px;
 }
 
 .nav-header {
   display: flex;
-  flex-direction: row;
 }
 
 .nav-title {
   display: flex;
-  flex-direction: row;
   align-self: center;
   margin-left: 0.3rem;
 }
 
 .nav-image {
   display: flex;
-  flex-direction: row;
   align-self: center;
   border: 1px solid white;
   border-radius: 8px;
@@ -40,7 +39,6 @@ body {
 
 nav.topnav {
   display: flex;
-  flex-direction: row;
   justify-self: end;
 }
 
@@ -50,7 +48,6 @@ nav.topnav {
 
 input {
   display: flex;
-  flex-direction: row;
 }
 
 .nav-search{
@@ -60,25 +57,87 @@ input {
 
 /* End Navigation */
 
+/* Start Newsfeed */
+
+.App.news-wrapper {
+  padding: 1rem 4rem 1rem 4rem;
+  font-size: 6pt;
+}
+
+.newsfeed-wrapper {
+  background-color: #dfdfdf;
+}
+
+.news-title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+p.rank {
+  color: var(--subtext-colour);
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+p.title {
+  margin-right: 0.8rem;
+}
+
+p.url {
+  color: var(--subtext-colour);
+}
+
+.news-subtext {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+p.rank {
+  color: var(--subtext-colour);
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+p.author {
+  color: var(--subtext-colour);
+  margin-right: 0.8rem;
+}
+
+p.date {
+  color: var(--subtext-colour);
+  margin-right: 0.8rem;
+}
+
+p.comment {
+  color: var(--subtext-colour);
+}
+/* End Newsfeed */
+
 /* Start Footer */
 .footer {
   display:flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  border-top: 2px solid #ff0000;
+  margin: 0px;
 }
 
-.footer-list {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
+.footer-list-start  {
+  margin: 0px;
 }
+
+ul.footer-list {
+  padding-inline: 0px;
+}
+
 .footer-list a{
  margin-left: 10px;
+ color: inherit;
+ text-decoration: none;
+ font-size: 8pt;
+ padding-inline: 0px;
 }
-ul.footer-list  {
-  list-style-type: none;
-};
-
   
 /* End Footer */

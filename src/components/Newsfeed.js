@@ -1,7 +1,8 @@
 import React from "react";
 import { parseISO, differenceInHours, formatDistanceToNow, differenceInDays, differenceInMonths, formatDistance   } from 'date-fns'
 
-export default function Newsfeed(props, newsDate) {
+
+const Newsfeed = (props, newsDate) => {
 // Current date
 const dateInMs = new Date()
 // console.log(dateInMs)
@@ -44,16 +45,23 @@ console.log(diff);
 //   return <h1> posted  {differenceInDays} ago</h1>
 // } else if { }
 
+
   return (
-    <div>
-        <p>{props.index+1}</p>
-        <p>{props.news.title}</p>
-        <p>{props.news.url}</p>
-        <p>{props.news.points}</p>
-        <p>by {props.news.author}</p>
-        <p>{props.news.created_at} | hide |</p>
-        <p> posted {diff} | hide |</p>
-        <p>{props.news.num_comments}</p>
+    <div className="news-item">
+      <div className="news-title">
+          <p className="rank">{props.index+1}</p>
+          <p className="title">{props.news.title}</p>
+          <p className="url">{props.news.url}</p>
+        </div>
+        <div className="news-subtext">
+          <p className="rank">{props.news.points}</p>
+          <p className="author">by {props.news.author}</p>
+          <p className="date">posted {diff} | hide |</p>
+          <p className="comment">{props.news.num_comments}</p>
+        </div>
+
     </div>
   );
-}
+};
+
+export default Newsfeed;
