@@ -23,7 +23,6 @@ const Newsfeed = (props) => {
   // 3. use a library and automatically calculate the diff
   // 4. use an external package to do everything for you: https://www.npmjs.com/package/timeago-react 
 
-
  
     const getHost = (url) => {
       let result;
