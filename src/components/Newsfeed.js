@@ -1,54 +1,27 @@
 import React from "react";
 import {
   parseISO,
-  differenceInHours,
-  formatDistanceToNow,
-  differenceInDays,
-  differenceInMonths,
   formatDistance,
 } from "date-fns";
 
 const Newsfeed = (props) => {
-  // Current date
-  const dateInMs = new Date();
 
-  // const dateOfNews = props.element.created_at
+  const formatDate = (timestamp) => {
+    const convertedTimeFromIso = parseISO(timestamp, {
+      additionalDigits: 1,
+    });
+    const diff = formatDistance(
+      new Date(convertedTimeFromIso),
+      new Date(),
+      { addSuffix: true }
+    );
+    return diff
+  }
 
-  // News Date
-  const convertedTimeFromIso = parseISO("2021-01-31T11:05:47.000Z", {
-    additionalDigits: 1,
-  });
-  console.log(convertedTimeFromIso);
-
-  // const convervedTimeToMs = convertedTimeFromIso.getTime()
-  // console.log(convervedTimeToMs);
-
-  // DifferenceIn
-  const timeDiffInDays = differenceInDays(
-    new Date(dateInMs),
-    new Date(convertedTimeFromIso)
-  );
-  const timeDiffInHrs = differenceInHours(
-    new Date(dateInMs),
-    new Date(convertedTimeFromIso)
-  );
-  const timeDiffInMonths = differenceInMonths(
-    new Date(dateInMs),
-    new Date(convertedTimeFromIso)
-  );
-
-  // Solution using FormatDistance
-  const diff = formatDistance(
-    new Date(convertedTimeFromIso),
-    new Date(dateInMs),
-    { addSuffix: true }
-  );
-  console.log(diff);
-  // console.log(timeDiffInDays, timeDiffInHrs, timeDiffInMonths );
-
-  // if (timeDiffInMonths < 1) {
-  //   return <h1> posted  {differenceInDays} ago</h1>
-  // } else if { }
+  // 1. Deal with everything in pure Javascript
+  // 2. use a library and manually calculate the diff
+  // 3. use a library and automatically calculate the diff
+  // 4. use an external package to do everything for you: https://www.npmjs.com/package/timeago-react 
 
   return (
     <div className="news-item">
@@ -58,9 +31,9 @@ const Newsfeed = (props) => {
         <p className="url">{props.news.url}</p>
       </div>
       <div className="news-subtext">
-        <p className="rank">{props.news.points}</p>
+        <p className="rank">{props.news.points} upvotes </p>
         <p className="author">by {props.news.author}</p>
-        <p className="date">posted {diff} | hide |</p>
+        <p className="date">posted {formatDate(props.news.created_at)} | hide |</p>
         <p className="comment">{props.news.num_comments} comments </p>
       </div>
     </div>
