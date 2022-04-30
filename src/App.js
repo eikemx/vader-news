@@ -24,7 +24,7 @@ const App = () => {
       <Navigation />
       <div className='newsfeed-wrapper'>
         {displayNews.map((element, index) => 
-        <Newsfeed news={element} key={element.objectID} index={index} newsDate={element.created_at} /> 
+        <Newsfeed news={element} key={element.objectID} index={index} /> 
         )}
         <Footer />
       </div>
