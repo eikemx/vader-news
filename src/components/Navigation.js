@@ -1,6 +1,6 @@
 import Searchbar from "./Searchbar";
 
-const Navigation = () => {
+const Navigation = (props) => {
     return (
         <div className="navigation">
             <div className="nav-header">
@@ -17,7 +17,7 @@ const Navigation = () => {
                 <p  className="nav-submit"> submit</p>
             </nav>
             <div className="nav-search">
-                {/* <Searchbar /> */}
+                <Searchbar setSearch={props.setSearch}/>
             </div>
         </div>
     )
