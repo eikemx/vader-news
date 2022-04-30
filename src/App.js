@@ -7,6 +7,7 @@ import './index.css';
 import Footer from "./components/Footer.js"
 import Navigation from "./components/Navigation"
 import Newsfeed from './components/Newsfeed';
+import VaderError from './components/VaderError';
 
 const App = () => {
 
@@ -34,7 +35,7 @@ const App = () => {
   }, []);
 
   if (isError) {
-    return <h5>No News are good News!</h5>
+    return <VaderError/>;
   }
   // console.log(news);
 
@@ -46,6 +47,7 @@ const App = () => {
     <div className="App news-wrapper"   >
       <Navigation />
       <div className='newsfeed-wrapper'>
+        {/* {isLoading ? <VaderLoader/> : } */}
         {displayNews.filter((element) => element.url).map((element, index) => 
         <Newsfeed news={element} key={element.objectID} index={index} /> 
         )}
