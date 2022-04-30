@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React, {useState, useEffect} from 'react';
+
 import './index.css';
 
 import news from "./news.json";
@@ -7,8 +9,9 @@ import Navigation from "./components/Navigation"
 import Newsfeed from './components/Newsfeed';
 
 const App = () => {
+
   const displayNews = news.hits;
-  // console.log(displayNews);
+ // console.log(displayNews);
 
   return (
     <div className="App news-wrapper"   >

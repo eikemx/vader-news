@@ -17,7 +17,7 @@ const Navigation = () => {
                 <p  className="nav-submit"> submit</p>
             </nav>
             <div className="nav-search">
-                <Searchbar />
+                {/* <Searchbar /> */}
             </div>
         </div>
     )
