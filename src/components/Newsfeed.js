@@ -23,12 +23,31 @@ const Newsfeed = (props) => {
   // 3. use a library and automatically calculate the diff
   // 4. use an external package to do everything for you: https://www.npmjs.com/package/timeago-react 
 
+
+const Newsfeed = (props) => {
+ 
+    const getHost = (url) => {
+      let result;
+      if (url) {
+        try {
+          result = new URL(url).host
+        } catch(e) {
+          console.log(e)
+          result = "No url"
+        } 
+      } else {
+        result = "No url"
+      }
+      return result
+    }
+
+
   return (
     <div className="news-item">
       <div className="news-title">
-        <p className="rank">{props.index + 1}</p>
+        <p className="index">{props.index + 1}</p>
         <p className="title">{props.news.title}</p>
-        <p className="url">{props.news.url}</p>
+        <p className="url">({getHost(props.news.url)})</p>
       </div>
       <div className="news-subtext">
         <p className="rank">{props.news.points} upvotes </p>

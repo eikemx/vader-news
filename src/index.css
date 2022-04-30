@@ -1,11 +1,13 @@
 :root{
   --subtext-colour: #7b7b7b;
+  --newsfeed-margin: 0.5rem;
+  --subtext-margin: 1.3rem;
+  --newsfeed-margin-top: 0rem;
 }
 
 body {
   font-family: Verdana, Geneva, sans-serif;
   color: #000000;
-  /* margin: 1rem 4rem 1rem 4rem; */
 }
 
 /* Start Navigation */
@@ -13,7 +15,6 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: #ff0000;
-  font-size: 10pt;
   line-height: 5px;
 }
 
@@ -31,10 +32,10 @@ body {
   display: flex;
   align-self: center;
   border: 1px solid white;
-  border-radius: 8px;
+  border-radius: 4px;
   margin-left: 0.3rem;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
 }
 
 nav.topnav {
@@ -50,9 +51,8 @@ input {
   display: flex;
 }
 
-.nav-search{
+.nav-search input{
   align-self: center;
-  margin-right: 0.3rem;
 }
 
 /* End Navigation */
@@ -71,17 +71,16 @@ input {
 .news-title {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
 }
 
-p.rank {
+p.index {
   color: var(--subtext-colour);
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
+  margin-left: var(--newsfeed-margin);
+  margin-right: var(--newsfeed-margin);
 }
 
 p.title {
-  margin-right: 0.8rem;
+  margin-right: var(--newsfeed-margin);
 }
 
 p.url {
@@ -91,27 +90,30 @@ p.url {
 .news-subtext {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  margin-top: var(--newsfeed-margin-top);
+  margin-left: var(--subtext-margin);
 }
 
 p.rank {
+  margin-top: var(--newsfeed-margin-top);;
   color: var(--subtext-colour);
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
 }
 
 p.author {
   color: var(--subtext-colour);
-  margin-right: 0.8rem;
+  margin-top: var(--newsfeed-margin-top);;
+  margin-right: var(--newsfeed-margin);
 }
 
 p.date {
   color: var(--subtext-colour);
-  margin-right: 0.8rem;
+  margin-top: var(--newsfeed-margin-top);;
+  margin-right: var(--newsfeed-margin);
 }
 
 p.comment {
   color: var(--subtext-colour);
+  margin-top: var(--newsfeed-margin-top);;
 }
 /* End Newsfeed */
 
@@ -130,13 +132,13 @@ p.comment {
 
 ul.footer-list {
   padding-inline: 0px;
+
 }
 
 .footer-list a{
  margin-left: 10px;
  color: inherit;
  text-decoration: none;
- font-size: 8pt;
  padding-inline: 0px;
 }
   
