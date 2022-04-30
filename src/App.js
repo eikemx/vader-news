@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-// import news from "./news.json";
 import Footer from "./components/Footer.js";
 import Navigation from "./components/Navigation";
 import Newsfeed from "./components/Newsfeed";
@@ -11,10 +10,15 @@ const App = () => {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
+    const url = new URL("http://hn.algolia.com/api/v1/search_by_date");
+    url.searchParams.set("tags", "story");
+    search && url.searchParams.set("query", search);
+    
     setIsLoading(true);
-    fetch("http://hn.algolia.com/api/v1/search_by_date?query=react&tags=story")
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Random 404");
@@ -29,7 +33,7 @@ const App = () => {
         setIsLoading(false)
         setIsError(true)
       })
-  }, []);
+  }, [search]);
 
   if (isError) {
     return <VaderError/>;
@@ -43,7 +47,7 @@ const App = () => {
 
   return (
     <div className="App news-wrapper">
-      <Navigation />
+      <Navigation setSearch={setSearch}/>
      <div className='newsfeed-wrapper'>
         {/* {isLoading ? <VaderLoader/> : } */}
         {displayNews.filter((element) => element.url).map((element, index) => 
@@ -55,4 +59,4 @@ const App = () => {
   );
 };
 
-export default App1;
+export default App;

@@ -1,34 +1,24 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// const Searchbar = (props) => {
-//   const [userInput, setUserInput] = useState("");
-//   const [search, setSearch] = useState("");
+const Searchbar = (props) => {
+  const [userInput, setUserInput] = useState("");
+  return (
+    <form onSubmit={(e) => {
+      e.preventDefault()
+      props.setSearch(userInput)
+      
+      }}>
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => setUserInput(e.target.value)}
+        value={userInput}
+      />
+    </form>
+  );
+};
 
-// const handleSearch = () => {
-    
-//     search.append
-
-
-// }
-
-//   return (
-//     <form>
-//       <input
-//         type="text"
-//         placeholder="Search..."
-//         onChange={(e) => setUserInput(e.target.value)}
-//         value={userInput}
-//       />
-
-//       <button
-//         className="waves-effect waves-light btn"
-//         // onClick={handleSearch}
-//       ></button>
-//     </form>
-//   );
-// };
-
-// export default Searchbar;
+export default Searchbar;
 
 // // // 1. fetch the real HN api inside a useEffect
 // // // 2. store the data in a state
