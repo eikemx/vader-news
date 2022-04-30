@@ -24,7 +24,6 @@ const Newsfeed = (props) => {
   // 4. use an external package to do everything for you: https://www.npmjs.com/package/timeago-react 
 
 
-const Newsfeed = (props) => {
  
     const getHost = (url) => {
       let result;
