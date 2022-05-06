@@ -3,6 +3,7 @@ import Searchbar from "./Searchbar";
 const Navigation = (props) => {
     return (
         <div className="navigation">
+
             <div className="nav-header">
                 <img className="nav-image" src="https://images.pexels.com/photos/4310574/pexels-photo-4310574.jpeg?cs=srgb&dl=pexels-lucas-ianiak-4310574.jpg&fm=jpg" alt="I am your father!"/>
                 <p  className="nav-title">VADER NEWS</p>
