@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect} from 'react';
 
 import './index.css';
@@ -11,13 +10,19 @@ import VaderError from "./components/VaderError";
 import VaderLoader from "./components/VaderLoader";
 // import Pagination from "./Pagination";
 
+
 const App = () => {
 
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
+    const url = new URL("http://hn.algolia.com/api/v1/search_by_date");
+    url.searchParams.set("tags", "story");
+    search && url.searchParams.set("query", search);
+    
     setIsLoading(true);
     fetch("http://hn.algolia.com/api/v1/search_by_date?query=react&tags=story")
     // http://hn.algolia.com/api/v1/search_by_date?query=react&tags=story
@@ -35,7 +40,7 @@ const App = () => {
         setIsLoading(false)
         setIsError(true)
       })
-  }, []);
+  }, [search]);
 
   if (isError) {
     return <VaderError/>;
@@ -44,21 +49,21 @@ const App = () => {
   const displayNews = news;
 
 
+
   return (
-    <div className="App news-wrapper container"   >
-      <div className='row'>
-        <Navigation />
-        <div className='newsfeed-wrapper row'>
-          {/* {isLoading ? <VaderLoader/> : } */}
-          {displayNews.filter((element) => element.url).map((element, index) => 
-          <Newsfeed news={element} key={element.objectID} index={index} /> 
-          )}
+
+    <div className="App news-wrapper">
+      <Navigation setSearch={setSearch}/>
+     <div className='newsfeed-wrapper'>
+        {/* {isLoading ? <VaderLoader/> : } */}
+        {displayNews.filter((element) => element.url).map((element, index) => 
+        <Newsfeed news={element} key={element.objectID} index={index} /> 
+        )}
           <div className="more-button row">
             {/* <Pagination/> */}
             <button>More...</button>
           </div>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </div>
   );
