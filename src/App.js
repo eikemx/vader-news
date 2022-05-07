@@ -8,11 +8,11 @@ import Navigation from "./components/Navigation"
 import Newsfeed from "./components/Newsfeed";
 import VaderError from "./components/VaderError";
 import VaderLoader from "./components/VaderLoader";
-// import Pagination from "./Pagination";
+import NoSearchResult from './components/NoSearchResult';
 
 const App = () => {
 
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [search, setSearch] = useState("");
@@ -44,13 +44,6 @@ const App = () => {
     return <VaderError/>;
   }
 
-  // if (!isLoading) {
-  //   return <VaderLoader/>
-  // }
-
-  // console.log(isLoading);
-
-  const displayNews = news;
 
 
   return (
@@ -58,12 +51,13 @@ const App = () => {
       <div className='row'>
           <Navigation setSearch={setSearch}/>
         <div className='newsfeed-wrapper row'>
-          {/* {isLoading ? <VaderLoader/> : } */}
-          {displayNews.filter((element) => element.url).map((element, index) => 
+        {isLoading && <VaderLoader/> }
+          {news && !news.length && <NoSearchResult search={search}/>}
+          {news && news.length && news.filter((element) => element.url).map((element, index) => 
           <Newsfeed news={element} key={element.objectID} index={index} /> 
           )}
           <div className="more-button row">
-            {/* <Pagination/> */}
+
             <button>More...</button>
           </div>
           <Footer />

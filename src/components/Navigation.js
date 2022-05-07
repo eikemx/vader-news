@@ -1,4 +1,5 @@
 import Searchbar from "./Searchbar";
+import CommentPage from "./CommentPage";
 
 const Navigation = (props) => {
     return (
