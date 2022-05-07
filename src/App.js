@@ -57,7 +57,6 @@ const App = () => {
           <Newsfeed news={element} key={element.objectID} index={index} /> 
           )}
           <div className="more-button row">
-
             <button>More...</button>
           </div>
           <Footer />
