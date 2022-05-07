@@ -15,7 +15,7 @@ body {
 /* Start Navigation */
 .navigation {
   display: flex;
-  /* flex-direction: row; */
+  justify-content: space-around;  
   background-color: #ff0000;
   line-height: 5px;
 }
@@ -47,6 +47,14 @@ nav.topnav {
 
 .topnav p {
   margin-right: 0.4rem;
+}
+
+input {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #000000;
+  color: white;
+  border: 1px solid red;
+  border-radius: 8px;
 }
 
 /* End Navigation */
@@ -148,3 +156,22 @@ ul.footer-list {
 }
 
 /* End Error Page */
+
+/* Start Loader */
+.vader-loader {
+  display: flex;
+  justify-content: center;
+}
+/* End Loader */
+
+/* Start NoResults */
+.vader-no-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vader-no-results h1 {
+  display: flex;
+  justify-content: center;
+}
+/* End NoResults */
