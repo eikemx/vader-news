@@ -15,12 +15,10 @@ const App = () => {
   const [isError, setIsError] = useState(false);
   const [search, setSearch] = useState("");
 
-
   useEffect(() => {
     const url = new URL("http://hn.algolia.com/api/v1/search_by_date");
     url.searchParams.set("tags", "story");
     search && url.searchParams.set("query", search);
-
 
     setIsLoading(true);
     fetch(url)
@@ -51,16 +49,9 @@ const App = () => {
         <div className="newsfeed-wrapper row">
           {isLoading && <VaderLoader />}
           {news && !news.length && <NoSearchResult search={search} />}
-          {news &&
-            news.length &&
-            news
-              .filter((element) => element.url)
-              .map((element, index) => (
-                <Newsfeed news={element} key={element.objectID} index={index} />
-              ))}
-          <div className="more-button row">
-            <button>Next</button>
-          </div>
+          {news && news.length > 0 && (
+            <Newsfeed news={news.filter((element) => element.url)} />
+          )}
           <Footer />
         </div>
       </div>

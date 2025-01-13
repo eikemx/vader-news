@@ -121,11 +121,16 @@ p.comment {
 /* End Newsfeed */
 
 /* Start Pagination */
-.more-button button {
+.pagination {
   margin: var(--subtext-margin);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-button {
   background-color: #ff0000;
   border: 1px solid #ff0000;
-  border-radius: var(--border-radius);
 }
 /* End Pagination */
 
