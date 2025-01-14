@@ -1,6 +1,6 @@
 # Vader News - A Star Wars-Themed Hacker News Clone
 
-![vader news](./src/img/vader_news_screenshot.png)
+<img src="./src/img/vader_news_screenshot.png" width="600" alt="vader news">
 
 ## Project Overview
 Vader News is a Star Wars-themed recreation of the Hacker News website, built during the WBS Coding School Bootcamp. This project fetches real-time news data from the Hacker News API and presents it with a unique Star Wars aesthetic.
