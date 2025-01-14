@@ -41,6 +41,7 @@ Vader News is a Star Wars-themed recreation of the Hacker News website, built du
    The application will open at [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure
+```bash
 vader-news/
 ├── src/
 │ ├── components/
@@ -48,6 +49,7 @@ vader-news/
 │ └── utils/
 ├── public/
 └── README.md
+```
 
 ## Learning Outcomes
 - Working with external APIs
