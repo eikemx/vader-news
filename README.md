@@ -43,11 +43,10 @@ Vader News is a Star Wars-themed recreation of the Hacker News website, built du
 ## Project Structure
 ```bash
 vader-news/
+├── public/
 ├── src/
 │ ├── components/
-│ ├── styles/
-│ └── utils/
-├── public/
+│ └── img/
 └── README.md
 ```
 
